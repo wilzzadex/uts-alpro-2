@@ -49,6 +49,10 @@ public class CekSegitigaForm extends  JFrame{
             });
 
         }
+
+        public static void main(String[] args) {
+            new CekSegitigaForm();
+        }
     }
 
 class Segitiga extends SegitigaAbstrak {

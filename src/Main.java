@@ -7,6 +7,10 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // get java version
+        String javaVersion = System.getProperty("java.version");
+        System.out.println("Java version: " + javaVersion);
+
         int choice;
         do {
             System.out.println("Menu:");
@@ -140,33 +144,6 @@ public class Main {
             return;
         }
 
-//        Double totalHarga = barang.getHarga() * jumlah;
-//
-//        Double diskon = 0.0;
-//        if(totalHarga > 1000000 && totalHarga < 5000000){
-//            diskon = 0.01;
-//            if(member != null){
-//                // add diskon 0.01
-//                diskon+=0.01;
-//            }
-//        }else if(totalHarga > 5000000 && totalHarga < 10000000) {
-//            diskon = 0.025;
-//            if (member != null) {
-//                diskon += 0.015;
-//            }
-//        }else if (totalHarga > 10000000) {
-//            diskon = 0.05;
-//            if (member != null) {
-//                diskon += 0.02;
-//            }
-//        } else {
-//            diskon = 0.0;
-//        }
-
-//        Double totalDiskon = totalHarga * diskon;
-//
-//        Double totalBayar = totalHarga - totalDiskon;
-
         Transaksi transaksi = new Transaksi();
         transaksi.tambahBarang(barang);
 
@@ -176,12 +153,14 @@ public class Main {
 
         // rerun inputTransaksi
         System.out.println("Apakah anda ingin menambahkan barang? (y/n)");
-        String pilihan = input.nextLine();
+        Scanner inpt = new Scanner(System.in);
+        String pilihan = inpt.nextLine();
         if (pilihan.equalsIgnoreCase("y")){
             inputTransaksi();
         }else{
             System.out.println("Apakah anda ingin melihat detail transaksi? (y/n)");
-            String pilihan2 = input.nextLine();
+            Scanner inpt2 = new Scanner(System.in);
+            String pilihan2 = inpt2.nextLine();
             if (pilihan2.equalsIgnoreCase("y")){
                 transaksi.printStruk();
             }else{

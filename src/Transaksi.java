@@ -49,7 +49,13 @@ public class Transaksi {
     // print struk
     public void printStruk() {
         System.out.println("=========Struk Belanja=========");
-        System.out.println("Nama Member: " + member.getNama());
+
+        // check if member is null
+        if (member == null) {
+            System.out.println("Nama Member: -");
+        } else {
+            System.out.println("Nama Member: " + member.getNama());
+        }
         System.out.println("Daftar Belanja: ");
         for (Barang barang : listBarang) {
             System.out.println(barang.getNama() + " - " + barang.getHarga());
